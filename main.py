@@ -28,14 +28,26 @@ inventory = {
     "shield": shield,
     "healing_potion": healing_potion
 }
-
-print(inventory["sword"]["value"]) 
 inventory["sword"]["attack"] = 20
-print(inventory["sword"]["attack"])
 
-sword = {
+inventory["sword"] = {
     "name": "Sting",
+    "value": 500,
     "attack": 7,
     "value": 5000
 }
-print(inventory["sword"])
+
+market = {
+    "apples": 5,
+    "oranges": 1
+}
+
+market["oranges"] -= 1
+
+del market["oranges"]
+
+market["bananas"] = 10
+
+# This prints each item from the dictionary and its value
+for item in market:
+    print(f"We have {market[item]} of {item} in stock")
