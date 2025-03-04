@@ -51,3 +51,7 @@ market["bananas"] = 10
 # This prints each item from the dictionary and its value
 for item in market:
     print(f"We have {market[item]} of {item} in stock")
+
+# To get a list of all the keys in a dictionary
+list_of_keys = list(market.keys())
+print(list_of_keys)
