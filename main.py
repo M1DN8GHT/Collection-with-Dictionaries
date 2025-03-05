@@ -1,57 +1,81 @@
-sword = {
-    "name": "Excalibur",
-    "attack": 10,
-    "value": 1000
+# Define the initial video game collection
+game_collection = {
+    "The Legend of Zelda: Breath of the Wild": {
+        "genre": "Action-adventure",
+        "release_year": 2017,
+        "platform": "Nintendo Switch"
+    },
+    "God of War": {
+        "genre": "Action-adventure",
+        "release_year": 2018,
+        "platform": "PlayStation 4"
+    },
+    "The Witcher 3: Wild Hunt": {
+        "genre": "RPG",
+        "release_year": 2015,
+        "platform": "Multiple"
+    },
+    "Red Dead Redemption 2": {
+        "genre": "Action-adventure",
+        "release_year": 2018,
+        "platform": "Multiple"
+    }
 }
 
-armor = {
-    "name": "Chainmail",
-    "defense": 5,
-    "value": 500
-}
+def add_game(collection, game_name, game_properties):
+    collection[game_name] = game_properties
 
-shield = {
-    "name": "Aegis",
-    "defense": 10,
-    "value": 750
-}
+def update_game(collection, game_name, property_name, new_value):
+    if game_name in collection:
+        collection[game_name][property_name] = new_value
 
-healing_potion = {
-    "name": "Small Healing Potion",
-    "heal": 10,
-    "value": 25
-}
+def remove_game(collection, game_name):
+    if game_name in collection:
+        del collection[game_name]
 
-inventory = {
-    "sword": sword,
-    "armor": armor,
-    "shield": shield,
-    "healing_potion": healing_potion
-}
-inventory["sword"]["attack"] = 20
+def display_collection(collection):
+    for game_name, properties in collection.items():
+        print(f"{game_name}:")
+        for key, value in properties.items():
+            print(f"  {key}: {value}")
+        print()
 
-inventory["sword"] = {
-    "name": "Sting",
-    "value": 500,
-    "attack": 7,
-    "value": 5000
-}
+def menu():
+    while True:
+        print("\nVideo Game Collection Menu")
+        print("1. Add a new game")
+        print("2. Update an existing game")
+        print("3. Remove a game")
+        print("4. Display all games")
+        print("5. Exit")
+        choice = input("Enter your choice: ")
 
-market = {
-    "apples": 5,
-    "oranges": 1
-}
+        if choice == '1':
+            game_name = input("Enter the game name: ")
+            genre = input("Enter the genre: ")
+            release_year = int(input("Enter the release year: "))
+            platform = input("Enter the platform: ")
+            add_game(game_collection, game_name, {
+                "genre": genre,
+                "release_year": release_year,
+                "platform": platform
+            })
+        elif choice == '2':
+            game_name = input("Enter the game name to update: ")
+            property_name = input("Enter the property to update (genre, release_year, platform): ")
+            new_value = input("Enter the new value: ")
+            if property_name == "release_year":
+                new_value = int(new_value)
+            update_game(game_collection, game_name, property_name, new_value)
+        elif choice == '3':
+            game_name = input("Enter the game name to remove: ")
+            remove_game(game_collection, game_name)
+        elif choice == '4':
+            display_collection(game_collection)
+        elif choice == '5':
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
-market["oranges"] -= 1
-
-del market["oranges"]
-
-market["bananas"] = 10
-
-# This prints each item from the dictionary and its value
-for item in market:
-    print(f"We have {market[item]} of {item} in stock")
-
-# To get a list of all the keys in a dictionary
-list_of_keys = list(market.keys())
-print(list_of_keys)
+# Run the menu
+menu()
