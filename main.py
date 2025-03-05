@@ -19,6 +19,36 @@ game_collection = {
         "genre": "Action-adventure",
         "release_year": 2018,
         "platform": "Multiple"
+    },
+    "Cyberpunk 2077": {
+        "genre": "RPG",
+        "release_year": 2020,
+        "platform": "Multiple"
+    },
+    "Minecraft": {
+        "genre": "Sandbox",
+        "release_year": 2011,
+        "platform": "Multiple"
+    },
+    "Fortnite": {
+        "genre": "Battle Royale",
+        "release_year": 2017,
+        "platform": "Multiple"
+    },
+    "Overwatch": {
+        "genre": "First-person shooter",
+        "release_year": 2016,
+        "platform": "Multiple"
+    },
+    "Apex Legends": {
+        "genre": "Battle Royale",
+        "release_year": 2019,
+        "platform": "Multiple"
+    },
+    "Hades": {
+        "genre": "Roguelike",
+        "release_year": 2020,
+        "platform": "Multiple"
     }
 }
 
