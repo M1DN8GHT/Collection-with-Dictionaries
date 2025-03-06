@@ -4,4 +4,5 @@
 # I used my contact book code to show how the terminal should be used and the code now seems to work but I need check and make sure it meets all of the requirements.
 
 # Commit 2
-# I used AI to make sure the code meets the requirements.
+# I used AI to make sure the code meets the requirements. 
+# I also edited the code so that when you choose an option and go through it, before you go back to the menu "Press any key to continue" pops up
